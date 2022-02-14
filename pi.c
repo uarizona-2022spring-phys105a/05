@@ -1,15 +1,15 @@
 /* This C program computes pi using a Monte Carlo method.
  *
  * The structure is very similar to the python code you implemented
- * last week.  Except for simplicity, we won't worry about the
+ * last week.  To keep it simple, we won't worry about the
  * convergence plot.  We simply want a fast implementation of Monte
  * Carlo pi.
  *
  * There is a "Makefile" come with this program.  On Unix/Linux, you
  * can just type `make` on command line to compile this program.
  *
- * If you are on Windows or do not have have `make`, then you may
- * compile this program using
+ * If you are on Windows (but not inside your WSL) or do not have have `make`,
+ * then you may compile this program using
  *
  *     gcc pi.c -O3 -o pi.exe
  *
@@ -29,6 +29,9 @@
 /* Step 1. Import libraries.
  *
  * C import library in a very different way compared to python.
+ * The effect of including a library is similar to doing
+ * "from <module> import *" in python: you can directly call all
+ * the functions in the imported module.
  */
 #include <time.h>   /* required for time() */
 #include <stdlib.h> /* required for srand() and rand(), RAND_MAX */
@@ -43,7 +46,10 @@ struct point {
 	double x, y;
 };
 
-/* Step 3. Generate one random point within the 1x1 box
+/* Step 3. Generate one random point within the 1x1 box.
+ *
+ * The "struct point" means that we are returing an object of type
+ * struct point.
  */
 struct point random_point()
 {
@@ -56,12 +62,13 @@ struct point random_point()
 /* Step 4. Check if a point is in the quarter circle
  *
  * What equation should go into this function?  The first part of the
- * equation is provided as a sampmle to access the x-coordinate of the
+ * equation is provided as a sample to access the x-coordinate of the
  * point.  Simply replace the underscores "________" in the following
  * function.
  */
 int inside(struct point p)
 {
+	double x_coordinate = p.x;
 	return ________;
 }
 
