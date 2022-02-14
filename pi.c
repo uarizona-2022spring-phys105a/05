@@ -102,6 +102,17 @@ double montecarlo_pi(int n_sample)
 int main(int argc, char *argv[])
 {
 	int n_sample = argc > 1 ? atoi(argv[1]) : 1000; /* parse input */
+	/* This syntax is called ternary operator and it equivalent to: */
+
+	/* int n_sample;
+	   if (argc > 1){
+	       n_sample = atoi(argv[1]);
+	   }else{
+	       n_sample = 1000;
+		   } */
+
+	/* atoi transforms a command-line argument to an integer */
+
 
 	srand(time(NULL)); /* seed the random number generator using
 	                      the current time */
