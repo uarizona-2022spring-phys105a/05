@@ -8,8 +8,8 @@
  * There is a "Makefile" come with this program.  On Unix/Linux, you
  * can just type `make` on command line to compile this program.
  *
- * If you are on Windows (but not inside your WSL) or do not have have `make`,
- * then you may compile this program using
+ * If you are on Windows (but not inside your WSL) or do not have have
+ * `make`, then you may compile this program using
  *
  *     gcc pi.c -O3 -o pi.exe
  *
@@ -69,6 +69,7 @@ struct point random_point()
 int inside(struct point p)
 {
 	double x_coordinate = p.x;
+	________;
 	return ________;
 }
 
@@ -102,17 +103,17 @@ double montecarlo_pi(int n_sample)
 int main(int argc, char *argv[])
 {
 	int n_sample = argc > 1 ? atoi(argv[1]) : 1000; /* parse input */
-	/* This syntax is called ternary operator and it equivalent to: */
 
-	/* int n_sample;
-	   if (argc > 1){
+	/* This syntax is called ternary operator and it equivalent to:
+
+	   int n_sample;
+	   if (argc > 1) {
 	       n_sample = atoi(argv[1]);
-	   }else{
+	   } else {
 	       n_sample = 1000;
-		   } */
+	   }
 
-	/* atoi transforms a command-line argument to an integer */
-
+	   atoi transforms a command-line argument to an integer */
 
 	srand(time(NULL)); /* seed the random number generator using
 	                      the current time */
